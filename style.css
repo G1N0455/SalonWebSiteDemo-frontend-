@@ -1,0 +1,192 @@
+/*Universial config*/
+*{
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+}
+
+
+/*body config*/
+body{
+  position:relative;
+
+}
+/*wrapper*/
+.wrapper{
+  width:100%;
+}
+/*photo config*/
+.basic-img{
+  position:relative;
+  top:120px;
+  width:100%;
+}
+
+@media screen and (min-width: 600px) {
+  .basic-img{
+    top:116px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .basic-img{
+    top:66px;
+  }
+}
+
+
+
+.map{
+  position:relative;
+  top:120px;
+  width:100%;
+  bottom:0px;
+  aspect-ratio: 1;
+}
+
+@media screen and (min-width: 600px) {
+  .map{
+    top:116px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .map{
+    top:66px;
+  }
+}
+
+/*photo config end*/
+
+/*nav bar*/
+ul.nav {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr); 
+  grid-template-columns: none; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  list-style-type: none;
+  border:0px solid rgb(255, 255, 255);
+  border-width:0px 0;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  z-index: 9999; 
+}
+
+ul.nav li {float: left;}
+
+ul.nav li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 6px 4px 6px;
+  text-decoration: none;  
+}
+
+ul.nav li a:hover {
+  background-color: rgb(128, 128, 128);
+
+}
+
+ul.nav li clock{
+  display:none;
+}
+
+
+@media screen and (min-width: 600px) {
+  ul.nav {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);    
+  }
+
+  ul.nav li a {
+    transition: all 0.2s ease 0s;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px 16px 20px;
+    text-decoration: none;
+  }
+
+  ul.nav li clock{
+    display:none;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  ul.nav {
+    grid-template-columns: repeat(5, 1fr);  
+    grid-template-rows:none;
+  }
+
+  ul.nav li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 24px 18px 24px;
+    text-decoration: none;
+  }
+
+  ul.nav li clock{
+    transition: all 0.2s ease 0s;
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 20px 16px 20px;
+    text-decoration: none;
+  }
+}
+/*nav bar end*/
+
+/*grid layout*/
+.grid-contactus{
+  display: grid;
+  grid-template-rows: 10fr 1fr;
+  gap: none;
+  top: 66px;
+}
+
+.grid-homepage{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: none;
+  top: 66px;
+}
+/*grid layout end*/
+
+/*form*/
+form {
+  top:144px;
+  position:relative;
+  margin: 0 auto;
+  border: 2px solid black;
+  padding: 20px;
+  width:200px;
+  height:350px;
+  z-index: 1;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 5px;
+  left:80px;
+}
+
+button {
+  padding: 5px 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+/*form end*/
+
+

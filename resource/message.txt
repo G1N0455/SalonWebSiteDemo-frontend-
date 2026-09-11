@@ -1,0 +1,161 @@
+To create a booking system with JavaScript, you will need to use a combination of HTML, CSS, and JavaScript code. Here are the basic steps to create a simple booking system:
+
+1. Set up the HTML structure: Create a basic HTML structure that includes a form for users to input booking details, a table to display the list of bookings, and any other elements you want to include in your booking system.
+
+2. Add CSS styles: Use CSS to style your HTML elements, making them look visually appealing and easy to use.
+
+3. Write JavaScript code: Use JavaScript to handle user input, add new bookings to the list, and remove bookings from the list.
+
+Here is a sample code for a simple booking system:
+
+HTML:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booking System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Booking System</h1>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required>
+      <button type="submit">Book</button>
+    </form>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="booking-list">
+      </tbody>
+    </table>
+    <script src="script.js"></script>
+  </body>
+</html>
+```
+
+CSS:
+
+```css
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+button {
+  padding: 5px 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+.delete-button {
+  padding: 5px 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+```
+
+JavaScript:
+
+```javascript
+const form = document.querySelector('form');
+const bookingList = document.querySelector('#booking-list');
+
+let myBookings = [];
+
+function Booking(name, date, time) {
+  this.name = name;
+  this.date = date;
+  this.time = time;
+}
+
+function addBookingToSystem(booking) {
+  myBookings.push(booking);
+}
+
+function removeBookingFromSystem(index) {
+  myBookings.splice(index, 1);
+}
+
+function displayBookings() {
+  bookingList.innerHTML = '';
+  for (let i = 0; i < myBookings.length; i++) {
+    const booking = myBookings[i];
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${booking.name}</td>
+      <td>${booking.date}</td>
+      <td>${booking.time}</td>
+      <td><button class="delete-button" data-index="${i}">Delete</button></td>
+    `;
+    bookingList.appendChild(row);
+  }
+}
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = form.name.value;
+  const date = form.date.value;
+  const time = form.time.value;
+  const booking = new Booking(name, date, time);
+  addBookingToSystem(booking);
+  displayBookings();
+  form.reset();
+});
+
+bookingList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('delete-button')) {
+    const index = e.target.dataset.index;
+    removeBookingFromSystem(index);
+    displayBookings();
+  }
+});
+```
+
+This code creates a simple booking system that allows users to book appointments and remove bookings from a list. You can customize the system by adding more features, such as email reminders or a calendar view.

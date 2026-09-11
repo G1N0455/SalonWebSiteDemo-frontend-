@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Heavenly Hair Beauty</title>	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charse="utf-8">
+    <link rel="icon" href="resource/icon.png">
+	<link rel="stylesheet" href="style.css">
+    <script src="style.js" defer></script>
+</head>
+<style>
+    body{
+        background-image: url("resource/booking.png");
+        width:100%;
+        background-size: cover;
+    }
+</style>
+<body style="background-color: 	#ed81b9b9">
+	<ul class="nav">	
+        <li><a  href="index.html">Home</a></li>
+        <li><a  href="hours.html">Opening Hours</a></li>
+        <li><a  href="booking.html">Booking</a></li>
+        <li><a  href="contactus.html">Contact us</a></li>    
+        <li>
+            <clock>
+                    <span id="hours">00</span>
+                    <span>:</span>
+                    <span id="minutes">00</span>
+                    <span>:</span>
+                    <span id="seconds">00</span>
+                    <span id="weekday">(Null)</span>
+            </clock>
+        </li>   
+    </ul>
+    
+    <form>
+        <label for="name">Surname:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="phone">Phone: e.g.1234-5678</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{{4}-[0-9]{4}}"> <br>
+        <label for="date">Date:</label><br>
+        <input type="date" id="date" name="date"><br>
+        <label for="time">Time:</label><br>
+        <input type="time" id="time" name="time" required><br>
+        <label for="service">Service:</label><br>
+        <select id="service" name="service">
+          <option value="Regular Haircut">Regular Haircut</option>
+          <option value=">Haircut + Shampoo">Haircut + Shampoo</option>
+          <option value="Permanent">Permanent</option>
+          <option value="Hair coloring">Hair coloring</option>
+          <option value="Hair treatment">Hair treatment</option>
+          <option value="Makeup">Makeup</option>
+          <option value="Full service">Full service</option>
+        </select><br><br>
+        
+        <button type="submit" >Submit</button>
+       
+      </form>   		
+      
+
+</body>
